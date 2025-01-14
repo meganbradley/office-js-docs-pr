@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 04/08/2024
+ms.date: 09/05/2024
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -12,10 +12,10 @@ ms.localizationpriority: high
 Script Lab is a free tool for anyone to learn how to develop Office Add-ins. Script Lab lets you to code and run the Office JavaScript APIs alongside your document in Excel, Outlook, PowerPoint, and Word. Use this convenient tool to prototype and verify the functionality you want in your own add-in.
 
 > [!div class="nextstepaction"]
-> [Get Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/?search=script%20lab)
+> [Get Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/product/office/WA104380862)
 
 > [!div class="nextstepaction"]
-> [Get Script Lab for Outlook](https://appsource.microsoft.com/?search=script%20lab)
+> [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 
 See Script Lab in action in this one-minute YouTube video.
 [![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
@@ -49,7 +49,7 @@ To call preview APIs within a snippet, you need to update the snippet's librarie
 
 By default, snippets that you open in Script Lab are saved to your browser cache or local storage. To save a snippet permanently, select **Copy** and paste the resulting clipboard content into a new .yml file. Use this to share snippets with colleagues or provide code for community sites, such as Stack Overflow.
 
-To import a snippet into Script Lab, select **Import** from the menu and paste in the complete YAML for the snippet.
+To import a snippet into Script Lab, select **Import** from the menu and paste in the complete YAML for the snippet. If you've saved the YAML as a [GitHub gist](https://gist.github.com/), you can paste a link to the gist instead.
 
 ## Supported clients
 
@@ -62,9 +62,6 @@ Script Lab is supported for Excel, Word, and PowerPoint on the following clients
 Script Lab for Outlook is available on the following clients.
 
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
-
-    [!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
-
 - Outlook on Windows\*
 - Outlook on Mac
 
@@ -74,10 +71,10 @@ Script Lab for Outlook is available on the following clients.
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Get Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/?search=script%20lab)
+> [Get Script Lab for Excel, PowerPoint, and Word](https://appsource.microsoft.com/product/office/WA104380862)
 
 > [!div class="nextstepaction"]
-> [Get Script Lab for Outlook](https://appsource.microsoft.com/?search=script%20lab)
+> [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 
 Once you've prototyped your code in Script Lab, turn it into a real add-in with the steps in [Create a standalone Office Add-in from your Script Lab code](./create-an-office-add-in-from-script-lab.md).
 

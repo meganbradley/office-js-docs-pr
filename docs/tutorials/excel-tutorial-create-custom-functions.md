@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 12/11/2023
+ms.date: 12/26/2024
 ms.service: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -22,11 +22,6 @@ In this tutorial, you will:
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Office connected to a Microsoft 365 subscription (including Office on the web).
-
-  > [!NOTE]
-  > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use for development through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
-
 ## Create a custom functions project
 
  To start, create the code project to build your custom function add-in. The [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) will set up your project with some prebuilt custom functions that you can try out. If you've already run the custom functions quick start and generated a project, continue to use that project and skip to [this step](#create-a-custom-function-that-requests-data-from-the-web) instead.
@@ -43,10 +38,6 @@ In this tutorial, you will:
     :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="The Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
     The Yeoman generator will create the project files and install supporting Node components.
-
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root folder of the project.
 
@@ -67,11 +58,7 @@ In this tutorial, you will:
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
-
-```command&nbsp;line
-npm run start:desktop
-```
+The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run the command `npm run start`. The local web server will start and Excel will open with your add-in loaded.
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -79,7 +66,7 @@ npm run start:desktop
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+[!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -158,9 +145,9 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 # [Excel on the web](#tab/excel-online)
 
-1. In Excel, select **Home** > **Add-ins**, then select **More Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
 
-1. In the Office Add-ins dialog, choose **Manage My Add-ins**, then select **Upload My Add-in**.
+1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 
 1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 

@@ -9,11 +9,13 @@ ms.localizationpriority: medium
 
 The Microsoft Office Add-ins community call is a monthly call where you can learn more about new features, development practices, and additional information about creating Office Add-ins. The community call occurs the second Wednesday of each month at 7:00 AM Pacific Time. You can download the calendar invite at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for May 8, 2024 call
-The agenda for the May Office Add-ins community call:
-- Outlook Add-ins Updates 
-- Word Add-ins Updates 
-- Enhance Security with NAA: A Simpler SSO Solution for WXP Add-ins
+> [!IMPORTANT]
+> We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
+
+## Agenda for January 8th, 2025 call
+The agenda for the January Office Add-ins community call:
+* Office Add-ins Development Kit GA​
+* Update on Nested App Authentication and Q&A
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).

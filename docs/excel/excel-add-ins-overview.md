@@ -23,7 +23,7 @@ The Office Add-ins platform provides the framework and Office.js JavaScript APIs
 - **Cross-platform support**: Excel add-ins run in Office on the web, Windows, Mac, and iPad.
 - **Centralized deployment**: Admins can quickly and easily deploy Excel add-ins to users throughout an organization.
 - **Use of standard web technology**: Create your Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript.
-- **Distribution via AppSource**: Share your Excel add-in with a broad audience by publishing it to [AppSource](https://appsource.microsoft.com/?product=office).
+- **Distribution via AppSource**: Share your Excel add-in with a broad audience by publishing it to [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office).
 
 > [!NOTE]
 > Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only in Office on Windows. Unlike COM add-ins, Excel add-ins don't require you to install any code on a user's device, or within Excel.
@@ -47,7 +47,7 @@ The [manifest](../develop/add-in-manifests.md) is a configuration file that defi
 - How the add-in integrates with Excel, including any custom UI that the add-in creates (ribbon buttons, context menus, and so on).
 - Permissions that the add-in requires, such as reading and writing to the document.
 
-To enable end users to install and use an Excel add-in, you must publish its manifest either to AppSource or to an add-ins catalog. For details about publishing to AppSource, see [Make your solutions available in AppSource and within Office](/office/dev/store/submit-to-appsource-via-partner-center).
+To enable end users to install and use an Excel add-in, you must publish its manifest either to AppSource or to an add-ins catalog. For details about publishing to AppSource, see [Make your solutions available in AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
 
 ## Capabilities of an Excel add-in
 

@@ -15,7 +15,7 @@ For Outlook add-ins to load and function properly, there are a number of require
 
   - Outlook on the web for Exchange 2016 or later
   - Outlook.com
-  - [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+  - [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
   - Outlook 2016 or later on Windows
   - Outlook on Mac
   - Outlook on Android
@@ -30,7 +30,7 @@ If the user is connected to Microsoft 365 or Outlook.com, mail server requiremen
 - The server must be Exchange 2016 or later.
 - Exchange Web Services (EWS) must be enabled and must be exposed to the Internet. Many add-ins require EWS to function properly.
 - The server must have a valid authentication certificate in order for the server to issue valid identity tokens. New installations of Exchange Server include a default authentication certificate. For more information, see [Digital certificates and encryption in Exchange 2016](/Exchange/architecture/client-access/certificates) and [Set-AuthConfig](/powershell/module/exchange/organization/Set-AuthConfig).
-- To access add-ins from [AppSource](https://appsource.microsoft.com/?product=office), the client access servers must be able to communicate with AppSource.
+- To access add-ins from [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), the client access servers must be able to communicate with AppSource.
 
 ## Add-in server requirements
 

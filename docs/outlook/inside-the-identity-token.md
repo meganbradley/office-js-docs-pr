@@ -7,8 +7,7 @@ ms.localizationpriority: medium
 
 # Inside the Exchange identity token
 
-> [!IMPORTANT]
-> Legacy Exchange user identity tokens and callback tokens will be turned off by default for all Exchange Online tenants in October 2024 as part of [Microsoft’s Secure Future Initiative](https://blogs.microsoft.com/on-the-issues/2023/11/02/secure-future-initiative-sfi-cybersecurity-cyberattacks/), which gives organizations the tools needed to respond to the current threat landscape. Exchange user identity tokens will still work for Exchange on-premises. Nested app authentication is the recommended approach for tokens going forward. For more information, see our [blog post about nested app authentication and legacy Exchange tokens](https://aka.ms/NAApreviewblog).
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 The Exchange user identity token returned by the [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method provides a way for your add-in code to include the user's identity with calls to your back-end service. This article will discuss the format and contents of the token.
 
@@ -64,7 +63,7 @@ The following table lists the parts of the identity token payload.
 
 | Claim | Description |
 |:-----|:-----|
-| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's webview control. The URL of the add-in is specified in the manifest. The markup depends on the type of manifest.</br></br>**XML manifest:** If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first **\<SourceLocation\>** element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest.</br></br>**Unified manifest for Microsoft 365:** The URL is specified in the "extensions.audienceClaimUrl" property. |
+| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's webview control. The URL of the add-in is specified in the manifest. The markup depends on the type of manifest.</br></br>**Add-in only manifest:** If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first **\<SourceLocation\>** element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest.</br></br>**Unified manifest for Microsoft 365:** The URL is specified in the "extensions.audienceClaimUrl" property. |
 | `iss` | A unique identifier for the Exchange server that issued the token. All tokens issued by this Exchange server will have the same identifier. |
 | `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
 | `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |

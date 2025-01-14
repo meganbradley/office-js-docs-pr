@@ -1,17 +1,17 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 04/12/2024
+ms.date: 10/17/2024
 ms.localizationpriority: medium
 ---
 
 # Add support for add-in commands in Outlook on mobile devices
 
-Using add-in commands in Outlook on mobile devices allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, on Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
+Using add-in commands in Outlook on mobile devices allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
 
 ## Update the manifest
 
-The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest. 
+The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -20,7 +20,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ```json
     "formFactors": [
         "mobile",
-        <!-- Typically there will be other form factors listed. -->
+        <!-- Typically, there'll be other form factors listed. -->
     ]
     ```
 
@@ -46,10 +46,10 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
    - Set appropriate "id" and "label" values.
    - Create an object in the "controls" array to represent a button and configure it as follows.
-      - Set appropriate "id" and "label" values.
-      - Set "buttonType" to "MobileButton".
+      - Set appropriate "id" and "label" values. To ensure that the button fits correctly in the ribbon, we recommend that you limit the "label" to 16 characters.
+      - Set "type" to "mobileButton".
       - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
-      - Be sure you have all nine required icons. 
+      - Be sure you have all nine required icons.
   
    The following is an example.
 
@@ -58,7 +58,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
         {
             "builtInTabId": "TabDefault",
             "groups": [
-                <-- non-mobile group objects omitted -->
+                <-- Non-mobile group objects omitted. -->
             ],
             "customMobileRibbonGroups": [
                 {
@@ -67,8 +67,8 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
                     "controls": [
                         { 
                             "id": "mobileInsertMeetingButton",
-                            "label": "Add Meeting",
-                            "buttonType": "MobileButton",
+                            "label": "Add meeting",
+                            "type": "mobileButton",
                             "actionId": "insertContosoMeeting",
                             "icons": [
                                 {
@@ -125,7 +125,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ]    
     ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
 
@@ -181,11 +181,9 @@ This is very similar to the elements that appear in a [DesktopFormFactor](/javas
 
 Designing an add-in for mobile introduces some additional considerations.
 
-### Use REST instead of Exchange Web Services
+### Use Microsoft Graph
 
-The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method isn't supported in Outlook mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](use-rest-api.md) to access the user's mailbox.
-
-Mailbox requirement set 1.5 introduced a new version of [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) that can request an access token compatible with the REST APIs, and a new [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property that can be used to find the REST API endpoint for the user.
+Add-ins should prefer to get information from the Office.js API when possible. If your add-in requires information not exposed by the Office.js API, use [Microsoft Graph](/graph/overview) to access the user's mailbox.
 
 ### Pinch zoom
 

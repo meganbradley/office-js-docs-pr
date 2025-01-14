@@ -1,19 +1,13 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge Legacy
 description: Debug add-ins using the developer tools in Microsoft Edge Legacy.
-ms.date: 08/18/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
 # Debug add-ins using developer tools in Microsoft Edge Legacy
 
-This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met.
-
-- You can't, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
-- Your computer is using a combination of Windows and Office versions that use the original Edge webview control, EdgeHTML.
-
-> [!TIP]
-> For information about debugging with Edge Legacy inside Visual Studio Code, see [Microsoft Office Add-in Debugger Extension for Visual Studio Code](debug-with-vs-extension.md).
+This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when your computer is using a combination of Windows and Office versions that use the original Edge webview control, EdgeHTML.
 
 To determine which browser or webview you're using, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
@@ -30,7 +24,7 @@ To determine which browser or webview you're using, see [Browsers and webview co
    > [!NOTE]
    > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the Microsoft Edge DevTools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
-1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
+1. [Sideload](test-debug-non-local-server.md) and run the add-in.
 1. Run the Microsoft Edge DevTools.
 1. In the tools, open the **Local** tab. Your add-in will be listed by its name. (Only processes that are running in EdgeHTML appear on the tab. The tool can't attach to processes that are running in other browsers or webviews, including Microsoft Edge (WebView2) and Internet Explorer (Trident).)
 
